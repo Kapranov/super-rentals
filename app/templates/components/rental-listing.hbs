@@ -1,0 +1,15 @@
+<div class="col-md-4">
+  <h2>{{rental.title}}</h2>
+  <p>Owner: {{rental.owner}}</p>
+  <p>Type: {{rental-property-type rental.type}} - {{rental.type}}</p>
+  <p>Location: {{rental.city}}</p>
+  <p>Number of bedrooms: {{rental.bedrooms}}</p>
+  <p>
+    {{#if isImageShowing}}
+      <p><img src={{rental.image}} alt={{rental.type}} width="250"></p>
+      <button class="btn btn-default" role="button" {{action "imageHide"}}>Hide details</button>
+    {{else}}
+      <button class="btn btn-default" role="button" {{action "imageShow"}}>View details</button>
+    {{/if}}
+  </p>
+</div>

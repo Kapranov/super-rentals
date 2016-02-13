@@ -1,0 +1,11 @@
+<form class="navbar-form navbar-left">
+  {{input type="text" class="form-control" placeholder="The search cities ..." value=filter key-up=(action 'autoComplete' filter)}}
+  <button class="btn btn-primary btn-md" {{action 'search'}}>Search</button>
+</form>
+
+<ul>
+  {{#each filteredList as |item|}}
+    <li {{action 'choose' item.city}}>{{item.city}}</li>
+  {{/each}}
+</ul>
+

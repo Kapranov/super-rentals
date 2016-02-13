@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to Super Rentals</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p>
+      {{#link-to "about" class="btn btn-primary btn-lg" role="button"}}About{{/link-to}}
+      {{#link-to "contact" class="btn btn-primary btn-lg" role="button"}}Contact us{{/link-to}}
+      {{#link-to "home" class="btn btn-primary btn-lg" role="button"}}Personal page{{/link-to}}
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{filter-listing filteredList=filteredList autoComplete=(action 'autoComplete') search=(action 'search')}}
+  </div>
+
+  <div class="row">
+    {{#each model as |rentalUnit|}}
+      {{rental-listing rental=rentalUnit}}
+    {{/each}}
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>© 2016 Company, Inc.</p>
+  </footer>
+</div>
